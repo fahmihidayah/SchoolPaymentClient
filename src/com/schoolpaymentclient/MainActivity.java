@@ -1,5 +1,6 @@
 package com.schoolpaymentclient;
 
+import com.framework.image_handler.CropImageHandler;
 import com.framework.rest_clients.MyRestClient;
 import com.loopj.android.http.JsonHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
@@ -21,6 +22,8 @@ public class MainActivity extends ActionBarActivity implements Constantas{
 
 	@InjectView(R.id.textViewInfo)
 	TextView textViewInfo;
+	
+	CropImageHandler cropImageHandler;
 	
 	@OnClick(R.id.buttonDataNotif)
 	public void onClickNotif(View view){
@@ -47,6 +50,7 @@ public class MainActivity extends ActionBarActivity implements Constantas{
 		infoMahasiswa += "Alamat : " + SchoolPaymentApp.getInstance().mahasiswaUser.getAlamat() + "\n";
 		infoMahasiswa += "Telepon : " + SchoolPaymentApp.getInstance().mahasiswaUser.getTelepon() + "\n";
 		textViewInfo.setText(infoMahasiswa);
+		cropImageHandler = new CropImageHandler(this);
 	}
 
 	@Override

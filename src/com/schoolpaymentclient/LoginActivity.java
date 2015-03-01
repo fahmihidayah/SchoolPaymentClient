@@ -67,6 +67,7 @@ public class LoginActivity extends ActionBarActivity implements Constantas{
 		ButterKnife.inject(this);
 		if(SchoolPaymentApp.getInstance().mahasiswaUser != null){
 			startActivity(new Intent(this, MainActivity.class));
+			finish();
 		}
 	}
 
